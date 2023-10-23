@@ -1,7 +1,7 @@
 import provasDoAluno from "@/data/provasDoAluno"
 import { useEffect, useState } from "react"
 
-export default ({ aluno, disciplina }) => {
+export default  function ProvasDoAluno ({ aluno, disciplina }) {
     const [provas, setProvas] = useState([])
     useEffect(() => {
         if (aluno == undefined) return
@@ -23,7 +23,7 @@ export default ({ aluno, disciplina }) => {
     return (
         <div  className="flex flex-col">
             {provas.map(prova => {
-                return <div>{prova.nota}</div>
+                return <div key={prova.id}>{prova.nota}</div>
             })}
             <div>
                 {

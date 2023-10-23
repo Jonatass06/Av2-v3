@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import alunosDoProfessor from "@/data/alunosDoProfessor"
 import AlunoDaTurma from "./AlunoDaTurma"
 
-export default ({ professor, atualizar }) => {
+export default  function TableAlunosProfessor({ professor, atualizar }) {
     const [alunos, setAlunos] = useState([])
     useEffect(() => {
         if (professor == undefined) return
@@ -20,7 +20,7 @@ export default ({ professor, atualizar }) => {
             <div className="titulo">Alunos</div>
             <div className="flex flex-col">
                 {alunos.map(aluno => {
-                    return <AlunoDaTurma atualizar={() => atualizar()} aluno={aluno} professor={professor} />
+                    return <AlunoDaTurma key={aluno.id} atualizar={() => atualizar()} aluno={aluno} professor={professor} />
                 })}
             </div>
         </div>

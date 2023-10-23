@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ProvasDoAluno from "./ProvasDoAluno";
 import { GetDataId } from "@/pages/api/hello";
 
-export default ({ aluno }) => {
+export default  function BoletimDoAluno({ aluno }) {
     const[disciplinas, setDisciplinas] = useState([])
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export default ({ aluno }) => {
                 <div>
                     {
                         disciplinas.map(disciplina => {
-                            return <div className={`flex gap-6 ${disciplinas.indexOf(disciplina) % 2 == 0 ? "bg-branco" : "bg-[#D9F0E5]"}`}>
+                            return <div key={disciplina.id} className={`flex gap-6 ${disciplinas.indexOf(disciplina) % 2 == 0 ? "bg-branco" : "bg-[#D9F0E5]"}`}>
                                 <div>
                                     Disciplina: {disciplina.nome}
                                 </div>

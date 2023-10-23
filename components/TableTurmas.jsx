@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import GetAllData, { DeleteData, PostData } from "@/pages/api/hello";
 import Turma from "./Turma";
 
-export default (props) => {
+export default function tableTurmas (props) {
     const professor = props.professor;
     const [turmas, setTurmas] = useState([]);
 
@@ -31,7 +31,7 @@ export default (props) => {
             </div>
             <div className="flex flex-col gap-2">
                 {turmas.map(turma => {
-                        return <div className="flex gap-2 items-center">
+                        return <div  key={turma.id} className="flex gap-2 items-center">
                             <Turma turmaData={turma} professor={professor} />
                             {!professor && <button className="linhas text-red-800" onClick={() => deletar(turma)}>x</button>}
                         </div>

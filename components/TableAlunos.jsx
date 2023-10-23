@@ -3,7 +3,7 @@ import { PostData, PutData } from "@/pages/api/hello"
 import ModalCadastro from "./ModalCadastro"
 import { useState } from "react";
 
-export default ({ alunos, turmas }) => {
+export default  function TableAlunos({ alunos, turmas }) {
 
     const [mostrarCadastro, setMostrarCadastro] = useState(false);
     function post(obj) {
@@ -21,14 +21,14 @@ export default ({ alunos, turmas }) => {
                 </div>
             <div className="flex flex-col">
                 {alunos.map(aluno => {
-                    return <div  className="flex ">
+                    return <div key={aluno.id}  className="flex ">
                         <div className="linha">{aluno.nome}</div>
                         <select className="linha" onChange={e => put(aluno, e.target.value)}>
                             {turmas.map(turma => {
                                 if (contem(aluno, turma.alunos)) {
-                                    return <option value={turma.id} selected>{turma.id}</option>
+                                    return <option key={turma.id} value={turma.id} selected>{turma.id}</option>
                                 }
-                                return <option value={turma.id}>{turma.id}</option>
+                                return <option key={turma.id} value={turma.id}>{turma.id}</option>
                             })}
                         </select>
                     </div>

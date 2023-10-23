@@ -2,7 +2,7 @@ import alunosDaTurma from "@/data/alunosDaTurma";
 import { useEffect, useState } from "react"
 import ProvasDoAluno from "./ProvasDoAluno";
 
-export default ({ professor, turma }) => {
+export default  function BoleitmProfessor({ professor, turma }) {
 
     const [alunos, setAlunos] = useState([])
 
@@ -24,7 +24,7 @@ export default ({ professor, turma }) => {
                 <div>
                     {
                         alunos.map(aluno => {
-                            return <div className={`flex gap-6 ${alunos.indexOf(aluno) % 2 == 0 ? "bg-branco" : "bg-[#D9F0E5]"}`}>
+                            return <div key={aluno.id} className={`flex gap-6 ${alunos.indexOf(aluno) % 2 == 0 ? "bg-branco" : "bg-[#D9F0E5]"}`}>
                                 <div>
                                     Aluno: {aluno.nome}
                                 </div>

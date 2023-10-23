@@ -1,7 +1,7 @@
 import { PutData } from "@/pages/api/hello";
 import { useEffect, useState } from "react";
 
-export default ({professor, disciplinas}) => {
+export default function DisciplinaProfessor ({professor, disciplinas}) {
     const [disciplina, setDisciplina] = useState(0);
     useEffect(() => {
         if (professor == undefined) return
@@ -19,7 +19,7 @@ export default ({professor, disciplinas}) => {
             <div className="linha">{professor.nome}</div>
             <select className="linha" onChange={e => put(professor, e.target.value)} value={disciplina}>
                 {disciplinas.map(disciplina => {
-                    return <option value={disciplina.id}>{disciplina.nome}</option>
+                    return <option key={disciplina.id} value={disciplina.id}>{disciplina.nome}</option>
                 })}
             </select>
         </div>

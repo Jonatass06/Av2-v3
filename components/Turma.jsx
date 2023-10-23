@@ -8,7 +8,7 @@ import BoletimProfessor from "./BoletimProfessor";
 import BoletinsSecretario from "./BoletinsSecretario";
 import { useRouter } from "next/router";
 
-export default ({ turmaData, professor }) => {
+export default function Turma ({ turmaData, professor }) {
     const [alunos, setAlunos] = useState([])
     const id = useRouter().query.id;
 

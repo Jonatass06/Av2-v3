@@ -2,7 +2,7 @@
 import { GetUserByPasswordUsername } from "@/pages/api/hello";
 import { useRouter } from "next/router";
 import { useState } from "react";
-export default () => {
+export default  function ModalLogin() {
 
     const[nome, setNome] = useState("")
     const[senha, setSenha] = useState("")

@@ -1,7 +1,7 @@
 import { PostData } from "@/pages/api/hello"
 import { useEffect, useState } from "react"
 
-export default ({ prova, professor}) => {
+export default  function Notas ({ prova, professor}) {
 
     const [nota, setNota] = useState(0)
 

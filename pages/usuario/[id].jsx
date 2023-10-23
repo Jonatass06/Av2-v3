@@ -18,7 +18,7 @@ import disciplinasData from "@/data/disciplinas";
 import turmasDoProfessor from "@/data/turmasDoProfessor";
 import TableSecretarios from "@/components/TableSecretarios";
 
-export default () =>{
+export default function User (){
     const id = useRouter().query.id;
     const [secretarios, setSecretarios] = useState([]);
     const [alunos, setAlunos] = useState([]);

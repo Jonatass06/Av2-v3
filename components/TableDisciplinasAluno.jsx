@@ -3,7 +3,7 @@ import { GetDataId } from "@/pages/api/hello";
 import { useEffect, useState } from "react"
 import BoletimAluno from "./BoletimAluno";
 
-export default ({ aluno }) => {
+export default  function TableDisciplinasAluno({ aluno }) {
     const [disciplinas, setDisciplinas] = useState([]);
     const [mostrarNotas, setMostrarN] = useState(false);
     const [relatorio, setRelatorio] = useState(false);
@@ -33,7 +33,7 @@ export default ({ aluno }) => {
             </div>
             <div  className="flex flex-col">
                 {disciplinas.map(disciplina => {
-                    return <div className="flex">
+                    return <div  key={disciplina.id} className="flex">
                         <div className="linha">{disciplina.nome}</div>
                         <div className="linha">
                             <div onClick={() => setMostrarN(true)}>
@@ -43,7 +43,7 @@ export default ({ aluno }) => {
                                 <div>
                                     {aluno.provas.map(prova => {
                                         if (prova.disciplina == disciplina) {
-                                            return <div>
+                                            return <div key={prova.id}>
                                                 <div>{prova.nota}</div>
                                             </div>
                                         }

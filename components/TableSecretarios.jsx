@@ -1,6 +1,6 @@
 import ModalCadastro from "./ModalCadastro"
 
-export default ({ secretarios }) => {
+export default  function TableSecretarios({ secretarios }) {
 
     const [mostrarCadastro, setMostrarCadastro] = useState(false);
     function post(obj) {
@@ -15,7 +15,7 @@ export default ({ secretarios }) => {
             </div>
             <div  className="flex flex-col">
                 {secretarios.map(secretario => {
-                    return <div  className="flex">
+                    return <div key={secretario.id}  className="flex">
                         <div className="linha">{secretario.nome}</div>
                         <div className="linha">{secretario.qtdBoletins}</div>
                     </div>

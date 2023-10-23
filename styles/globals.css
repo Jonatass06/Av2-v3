@@ -22,7 +22,7 @@ input{
 }
 
 .linhas{
-  @apply flex w-full p-6 border-verder rounded-md text-azul font-montserrat text-[16px] focus:outline-none;
+  @apply flex w-full p-6 border-verde rounded-md text-azul font-montserrat text-[16px] focus:outline-none;
 }
 
 .botao{

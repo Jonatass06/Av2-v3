@@ -2,7 +2,7 @@
 import ModalConfigs from "./ModalConfigs";
 import { useState } from "react";
 
-export default ({id}) => {
+export default  function Header({id}) {
 
     const [mostrarModal, setMostrarModal] = useState(false);
 

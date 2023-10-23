@@ -9,7 +9,7 @@ import secretarios from "@/data/secretarios";
 import alunos from "@/data/alunos";
 import professores from "@/data/professores";
 
-export default () => {
+export default function ConfigsUser () {
     const router = useRouter();
     const { index } = router.query;
     const [usuario, setUsuario] = useState({})

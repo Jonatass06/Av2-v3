@@ -3,7 +3,7 @@ import { DeleteData, PostData } from "@/pages/api/hello";
 import { useEffect, useState } from "react";
 import Notas from "./Notas";
 
-export default ({aluno, professor, atualizar}) => {
+export default  function AlunoDaTurma({aluno, professor, atualizar}) {
 
     const [mostrarNotas, setMostrarN] = useState(false)
     const [provas, setProvas] = useState([])
@@ -48,7 +48,7 @@ export default ({aluno, professor, atualizar}) => {
                     {mostrarNotas &&
                         <div className="flex flex-col">
                             {provas.map(prova => {
-                                return <div  className="flex">
+                                return <div key={prova.id} className="flex">
                                     <Notas prova={prova} professor={professor} />
                                     <button className="text-red-800" onClick={() => deletarNota(prova)}>x</button>
                                 </div>

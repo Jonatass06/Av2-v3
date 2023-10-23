@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default ({post}) => {
+export default  function ModalCadastro({post}) {
     const[nome, setNome] = useState("")
     const[senha, setSenha] = useState("")
     const[idade, setIdade] = useState("")

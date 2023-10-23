@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import disciplinasNaoTurma from "@/data/disciplinasNaoTurma"
 
-export default ({turma, postDisciplina}) => {
+export default  function DisciplinaCadastro({turma, postDisciplina}) {
 
     const[disciplinas, setDisciplinas] = useState([])
 
@@ -21,7 +21,7 @@ export default ({turma, postDisciplina}) => {
     return(
         <select className="p-2 border-verde rounded-sm absolute" onBlur={e => {escolheDisciplina(e)}}>
             {disciplinas.map(disciplina => {
-                return <option value={disciplina.id}>{disciplina.nome}</option>
+                return <option key={disciplina.id} value={disciplina.id}>{disciplina.nome}</option>
             })}
         </select>
     )

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export default ({ id }) => {
+export default  function ModalConfigs({ id }) {
     const router = useRouter();
     return (
         <div className="absolute top-10 right-12 bg-branco flex flex-col p-6 shadow-10b">

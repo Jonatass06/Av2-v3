@@ -2,7 +2,7 @@
 import ModalLogin from "@/components/ModalLogin";
 import LateralLogo from "@/components/LateralLogo";
 
-export default function Index(){
+export default function Login(){
   
   return(
     <div className="flex align-center w-screen h-screen bg-branco">

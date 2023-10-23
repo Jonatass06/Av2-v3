@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Disciplina from "./Disciplina"
 import GetAllData, { DeleteData, PostData } from "@/pages/api/hello"
 
-export default ({ disciplinas }) => {
+export default  function TableDisciplinas ({ disciplinas }) {
     const [materias, setMaterias] = useState([])
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export default ({ disciplinas }) => {
             </div>
             <div  className="flex flex-col">
                 {materias.map(disciplina => {
-                    return <div  className="flex">
+                    return <div  key={disciplina.id} className="flex">
                         <Disciplina disciplina={disciplina} />
                         <button className="text-red-800" onClick={() => deletar(disciplina)}>X</button>
                     </div>

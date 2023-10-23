@@ -1,7 +1,7 @@
 import { PutData } from "@/pages/api/hello";
 import { useEffect, useState } from "react";
 
-export default ({ disciplina }) => {
+export default  function Disciplina({ disciplina }) {
     const [nome, setNome] = useState("");
     const [carga, setCarga] = useState("");
 
