@@ -17,11 +17,12 @@ export default ({ aluno }) => {
 
     return (
         <div>
-            <div>
+            <div className="titulo">
                 <div>
                     Alunos
                 </div>
-                <button onClick={() => setRelatorio(true)}>
+                <button className="w-1/4 border-l-branco " 
+                onClick={() => setRelatorio(true)}>
                     Gerar Relatório
                 </button>
                 {relatorio &&
@@ -30,11 +31,11 @@ export default ({ aluno }) => {
                     </div>
                 }
             </div>
-            <div>
+            <div  className="flex flex-col">
                 {disciplinas.map(disciplina => {
-                    return <div>
-                        <div>{disciplina.nome}</div>
-                        <div>
+                    return <div className="flex">
+                        <div className="linha">{disciplina.nome}</div>
+                        <div className="linha">
                             <div onClick={() => setMostrarN(true)}>
                                 Notas
                             </div>
@@ -50,8 +51,8 @@ export default ({ aluno }) => {
                                 </div>
                             }
                         </div>
-                        <div>{disciplina.cargaHoraria}</div>
-                        <div>{disciplina.professor}</div>
+                        <div className="linha">{disciplina.cargaHoraria}</div>
+                        <div className="linha">{disciplina.professor}</div>
                     </div>
                 })}
             </div>

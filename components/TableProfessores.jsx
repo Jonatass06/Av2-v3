@@ -11,10 +11,10 @@ export default ({ professores, disciplinas }) => {
     }
     return (
         <div>
-            <div>Professores
-                <button onClick={() => setMostrarCadastro(true)}>+</button>
+            <div className="titulo">Professores
+                <button className="botao" onClick={() => setMostrarCadastro(true)}>+</button>
             </div>
-            <div>
+            <div  className="flex flex-col">
                 {professores.map(professor => {
                     return <DisciplinaProfessor professor={professor} disciplinas={disciplinas} />
                 })}

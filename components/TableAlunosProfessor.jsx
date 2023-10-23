@@ -17,8 +17,8 @@ export default ({ professor, atualizar }) => {
 
     return (
         <div>
-            <div>alunos</div>
-            <div>
+            <div className="titulo">Alunos</div>
+            <div className="flex flex-col">
                 {alunos.map(aluno => {
                     return <AlunoDaTurma atualizar={() => atualizar()} aluno={aluno} professor={professor} />
                 })}

@@ -21,13 +21,13 @@ export default ({ disciplinas }) => {
 
     return (
         <div>
-            <div>
+            <div className="titulo">
                 Disciplinas
-                <button onClick={() => post()}>+</button>
+                <button className="botao" onClick={() => post()}>+</button>
             </div>
-            <div>
+            <div  className="flex flex-col">
                 {materias.map(disciplina => {
-                    return <div>
+                    return <div  className="flex">
                         <Disciplina disciplina={disciplina} />
                         <button className="text-red-800" onClick={() => deletar(disciplina)}>X</button>
                     </div>

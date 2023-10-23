@@ -25,15 +25,15 @@ export default (props) => {
 
     return (
         <div>
-            <div>Turmas
+            <div className="titulo">Turmas
                 {!professor &&
-                    <button onClick={() => post()}>+</button>}
+                    <button className="botao" onClick={() => post()}>+</button>}
             </div>
-            <div>
+            <div className="flex flex-col gap-2">
                 {turmas.map(turma => {
-                        return <div>
+                        return <div className="flex gap-2 items-center">
                             <Turma turmaData={turma} professor={professor} />
-                            {!professor && <button className="text-red-800" onClick={() => deletar(turma)}>x</button>}
+                            {!professor && <button className="linhas text-red-800" onClick={() => deletar(turma)}>x</button>}
                         </div>
                     })}
             </div>

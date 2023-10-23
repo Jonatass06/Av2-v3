@@ -9,14 +9,15 @@ export default ({ secretarios }) => {
 
     return (
         <div>
-            <div>Secretarios
-                <button onClick={() => setMostrarCadastro(true)}>+</button>
+            <div className="titulo">
+                Secretarios
+                <button className="botao" onClick={() => setMostrarCadastro(true)}>+</button>
             </div>
-            <div>
+            <div  className="flex flex-col">
                 {secretarios.map(secretario => {
-                    return <div>
-                        <div>{secretario.nome}</div>
-                        <div>{secretario.qtdBoletins}</div>
+                    return <div  className="flex">
+                        <div className="linha">{secretario.nome}</div>
+                        <div className="linha">{secretario.qtdBoletins}</div>
                     </div>
                 })}
             </div>

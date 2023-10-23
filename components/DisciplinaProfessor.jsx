@@ -15,9 +15,9 @@ export default ({professor, disciplinas}) => {
     }
 
     return (
-        <div>
-            <div>{professor.nome}</div>
-            <select onChange={e => put(professor, e.target.value)} value={disciplina}>
+        <div  className="flex">
+            <div className="linha">{professor.nome}</div>
+            <select className="linha" onChange={e => put(professor, e.target.value)} value={disciplina}>
                 {disciplinas.map(disciplina => {
                     return <option value={disciplina.id}>{disciplina.nome}</option>
                 })}

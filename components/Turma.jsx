@@ -62,10 +62,10 @@ export default ({ turmaData, professor }) => {
     }
 
     return (
-        <>
-            <div>{turma.id}</div>
+        <div  className="flex">
+            <div className="linha">{turma.id}</div>
             <div>
-                <div onClick={() => setMostrarA(!mostrarAlunos)}>
+                <div className="linha" onClick={() => setMostrarA(!mostrarAlunos)}>
                     Alunos
                 </div>
                 {mostrarAlunos && <Nomes objs={alunos} deletar={id => deletar(id, "aluno")}></Nomes>}
@@ -73,28 +73,28 @@ export default ({ turmaData, professor }) => {
             {
                 !professor &&
                 <div>
-                    <div onClick={() => setMostrarD(!mostrarDisciplinas)}>
+                    <div onClick={() => setMostrarD(!mostrarDisciplinas)} className="linha">
                         Disciplinas
                         {
                             disciplinas.length > 0 &&
-                            <>
-                                <button onClick={() => setMostrarCD(!mostrarCadastroD)}>+</button>
+                            <div className="relative">
+                                <button className="botao" onClick={() => setMostrarCD(!mostrarCadastroD)}>+</button>
                                 {mostrarCadastroD &&
                                     <DisciplinaCadastro turma={turma} postDisciplina={id => postDisciplina(id)}></DisciplinaCadastro>
                                 }
-                            </>
+                            </div>
                         }
                     </div>
                     {mostrarDisciplinas && <Nomes objs={turma.disciplinas} deletar={id => deletar(id, "disciplina")}></Nomes>}
                 </div>
             }
-            <button onClick={() => verRelatorio()}>Relatorio</button>
+            <button className="bg-verde w-fill text-branco" onClick={() => verRelatorio()}>Relatorio</button>
             {relatorio &&
                 (professor ?
                     <BoletimProfessor professor={professor} turma={turma}></BoletimProfessor>
                     :
                     <BoletinsSecretario alunosData={alunos}></BoletinsSecretario>)
             }
-        </>
+        </div>
     )
 }

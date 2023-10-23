@@ -35,20 +35,20 @@ export default ({aluno, professor, atualizar}) => {
     }
 
     return (
-        <div>
-            <div>{aluno.nome}</div>
-            <div>{aluno.turma.id}</div>
+        <div  className="flex">
+            <div className="linha">{aluno.nome}</div>
+            <div className="linha">{aluno.turma.id}</div>
             <div>
                 <div>
-                    <div onClick={() => setMostrarN(!mostrarNotas)}>
+                    <div className="linha"  onClick={() => setMostrarN(!mostrarNotas)}>
                         Notas
-                        <button onClick={() => { postNota(aluno) }}>+</button>
+                        <button className="botao" onClick={() => { postNota(aluno) }}>+</button>
                     </div>
 
                     {mostrarNotas &&
-                        <div>
+                        <div className="flex flex-col">
                             {provas.map(prova => {
-                                return <div>
+                                return <div  className="flex">
                                     <Notas prova={prova} professor={professor} />
                                     <button className="text-red-800" onClick={() => deletarNota(prova)}>x</button>
                                 </div>

@@ -19,7 +19,7 @@ export default ({turma, postDisciplina}) => {
     }
 
     return(
-        <select onBlur={e => {escolheDisciplina(e)}}>
+        <select className="p-2 border-verde rounded-sm absolute" onBlur={e => {escolheDisciplina(e)}}>
             {disciplinas.map(disciplina => {
                 return <option value={disciplina.id}>{disciplina.nome}</option>
             })}

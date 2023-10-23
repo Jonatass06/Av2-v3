@@ -21,7 +21,7 @@ export default ({ aluno, disciplina }) => {
     }
 
     return (
-        <div>
+        <div  className="flex flex-col">
             {provas.map(prova => {
                 return <div>{prova.nota}</div>
             })}

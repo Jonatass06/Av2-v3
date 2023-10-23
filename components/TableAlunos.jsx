@@ -15,15 +15,15 @@ export default ({ alunos, turmas }) => {
     }
     return (
         <div>
-            <div>
+            <div className="titulo">
                 Alunos
-                <button onClick={() => setMostrarCadastro(true)}>+</button>
+                <button className="botao" onClick={() => setMostrarCadastro(true)}>+</button>
                 </div>
-            <div>
+            <div className="flex flex-col">
                 {alunos.map(aluno => {
-                    return <div>
-                        <div>{aluno.nome}</div>
-                        <select onChange={e => put(aluno, e.target.value)}>
+                    return <div  className="flex ">
+                        <div className="linha">{aluno.nome}</div>
+                        <select className="linha" onChange={e => put(aluno, e.target.value)}>
                             {turmas.map(turma => {
                                 if (contem(aluno, turma.alunos)) {
                                     return <option value={turma.id} selected>{turma.id}</option>

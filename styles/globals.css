@@ -20,3 +20,15 @@
 input{
   @apply w-[370px] h-[90px] rounded-[5px] border-b-verde border-b-[3px] font-alata text-[24px] px-4 h-16 focus:outline-none;
 }
+
+.linhas{
+  @apply flex w-full p-6 border-verder rounded-md text-azul font-montserrat text-[16px] focus:outline-none;
+}
+
+.botao{
+  @apply bg-branco text-verde rounded-full w-8 h-8;
+}
+
+.titulo{
+  @apply w-full p-6 bg-verde text-branco flex justify-between items-center rounded-sm text-[24px] font-alata;
+}

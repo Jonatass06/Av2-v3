@@ -21,7 +21,7 @@ export default ({ disciplina }) => {
     }
 
     return (
-        <div>
+        <div className="flex">
             <input type="text" placeholder="Nome" onChange={e => setNome(e.target.value)} onBlur={() => put()} value={nome} />
             <input type="number" onChange={e => setCarga(e.target.value)} onBlur={() => put()} placeholder="Carga Horária" value={carga} />
         </div>)
